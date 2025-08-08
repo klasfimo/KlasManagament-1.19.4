@@ -1,0 +1,118 @@
+# Klas Management Plugin Configuration
+
+# Yetkili Sohbet Ayarları
+yetkili-chat:
+  format: "&8[&cYetkili&8] &7{player}: &f{message}"
+
+# Yetkili Süre Menüsü Ayarları
+yetkili-sure:
+  title: "&8&lYetkili Süre Sıralaması"
+  size: 54
+  
+  # Haftalık sıfırlama ayarları
+  weekly-reset:
+    day: "SUNDAY" # PAZAR
+    hour: 23
+    minute: 0
+    
+  # Discord entegrasyonu
+  discord:
+    enabled: false
+    webhook-url: "YOUR_DISCORD_WEBHOOK_URL"
+    channel-id: "YOUR_CHANNEL_ID"
+    timeout: 5000 # Webhook timeout (ms)
+    retry-attempts: 3 # Yeniden deneme sayısı
+    debug: false # Debug modu
+    
+  # Menü öğeleri
+  items:
+    kalici-siralama:
+      slot: 20
+      material: "PAPER"
+      name: "&6&lKalıcı Sıralama"
+      lore:
+        - "&7Bu sıralama hiçbir zaman"
+        - "&7sıfırlanmaz ve kalıcıdır."
+        - ""
+        - "&eTıkla ve görüntüle"
+        
+    haftalik-siralama:
+      slot: 24
+      material: "PAPER"
+      name: "&a&lHaftalık Sıralama"
+      lore:
+        - "&7Bu sıralama her hafta"
+        - "&7otomatik olarak sıfırlanır."
+        - ""
+        - "&eTıkla ve görüntüle"
+
+# İzleme Komutu Ayarları
+izleme:
+  max-distance: 15
+  spectator-mode: "SPECTATOR"
+  return-mode: "SURVIVAL"
+
+# Kullanıcı Bilgileri Menüsü
+kullanici-menu:
+  title: "&8&l{player} Bilgileri"
+  size: 54
+  
+  items:
+    dupe-ip:
+      slot: 12
+      material: "GLOBE_BANNER_PATTERN"
+      name: "&c&lDupe IP"
+      lore:
+        - "&7Aynı IP adresini kullanan"
+        - "&7diğer kullanıcılar"
+        - ""
+        - "&eTıkla ve görüntüle"
+        
+    cezalar:
+      slot: 14
+      material: "REDSTONE"
+      name: "&4&lCezalar"
+      lore:
+        - "&7Bu oyuncunun geçmişte"
+        - "&7aldığı cezalar"
+        - ""
+        - "&eTıkla ve görüntüle"
+        
+    sohbet-kayitlari:
+      slot: 16
+      material: "BOOK"
+      name: "&a&lSohbet Kayıtları"
+      lore:
+        - "&7Bu oyuncunun son mesajları"
+        - ""
+        - "&eTıkla ve görüntüle"
+
+# Yetkililer Menüsü Ayarları
+yetkililer-menu:
+  title: "&8&lYetkililer"
+  size: 54
+  permission: "klas.yetkililer"
+
+# Mesajlar
+messages:
+  yetkili-chat:
+    enabled: "&aYetkili sohbeti &aaktif hale getirildi!"
+    disabled: "&cYetkili sohbeti &cdevre dışı bırakıldı!"
+    no-permission: "&cBu komutu kullanmaya yetkiniz yok!"
+    
+  izleme:
+    started: "&a{player} &aadlı oyuncu izlenmeye başlandı!"
+    stopped: "&cİzleme sonlandırıldı!"
+    player-not-found: "&cBelirtilen oyuncu bulunamadı!"
+    too-far: "&cOyuncudan çok uzaklaştınız! Geri döndürülüyorsunuz..."
+    
+  kullanici:
+    player-not-found: "&cBelirtilen oyuncu bulunamadı!"
+    no-data: "&cBu oyuncu hakkında veri bulunamadı!"
+
+# PlaceholderAPI desteği
+placeholders:
+  player: "{player}"
+  message: "{message}"
+  time: "{time}"
+  rank: "{rank}" 

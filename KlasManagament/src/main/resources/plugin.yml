@@ -1,0 +1,77 @@
+name: KlasManagament
+version: '${version}'
+main: org.klasfimo.klasManagament.KlasManagament
+api-version: '1.19'
+authors: [ klasfimo ]
+description: Klas Management Plugin - Yetkili Yönetim Sistemi
+website: https://discord.gg/klasfiso
+
+softdepend: [LiteBans, LuckPerms, PlaceholderAPI]
+
+commands:
+  yetkilichat:
+    description: Yetkili sohbet kanalını açar/kapatır
+    aliases: [yc]
+    usage: /yetkilichat
+    permission: klas.yetkilichat
+  yetkilisure:
+    description: Yetkili süre menüsünü açar
+    aliases: [ys]
+    usage: /yetkilisure
+    permission: klas.yetkilisure
+  izle:
+    description: Belirtilen oyuncuyu izler
+    usage: /izle <oyuncu>
+    permission: klas.izle
+  kullanici:
+    description: Oyuncu bilgilerini gösterir
+    aliases: [kullanıcı]
+    usage: /kullanici <oyuncu>
+    permission: klas.kullanici
+  yetkililer:
+    description: Tüm yetkilileri listeler
+    usage: /yetkililer
+    permission: klas.yetkililer
+  klasmanagement:
+    description: Klas Management ana komutu
+    aliases: [km]
+    usage: /klasmanagement reload
+    permission: klas.reload
+  yetkilisuresifirla:
+    description: Haftalık yetkili sürelerini sıfırlar
+    usage: /yetkilisuresifirla
+    permission: klas.yetkilisure.reset
+
+permissions:
+  klas.yetkilichat:
+    description: Yetkili sohbet komutunu kullanma izni
+    default: op
+  klas.yetkilisure:
+    description: Yetkili süre menüsünü kullanma izni
+    default: op
+  klas.izle:
+    description: Oyuncu izleme komutunu kullanma izni
+    default: op
+  klas.kullanici:
+    description: Oyuncu bilgilerini görüntüleme izni
+    default: op
+  klas.yetkililer:
+    description: Yetkililer listesini görüntüleme izni
+    default: op
+  klas.reload:
+    description: Plugin yeniden yükleme izni
+    default: op
+  klas.yetkilisure.reset:
+    description: Haftalık süreleri sıfırlama izni
+    default: op
+  klas.admin:
+    description: Tüm yönetim komutlarına erişim
+    default: op
+    children:
+      klas.yetkilichat: true
+      klas.yetkilisure: true
+      klas.izle: true
+      klas.kullanici: true
+      klas.yetkililer: true
+      klas.reload: true
+      klas.yetkilisure.reset: true
